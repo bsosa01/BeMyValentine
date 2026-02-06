@@ -1,0 +1,182 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #ffc0cb 0%, #ffb6c1 50%, #ff69b4 100%);
+  background-attachment: fixed;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* Valentine's Day Styles */
+.valentine-container {
+  padding: 60px 20px;
+  margin-top: 40px;
+}
+
+.valentine-title {
+  color: #e91e63;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.valentine-message {
+  color: #c2185b;
+  font-size: 1.8rem;
+  margin: 30px 0;
+}
+
+.btn-valentine {
+  background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+}
+
+.btn-valentine:hover {
+  background: linear-gradient(135deg, #ff0844 0%, #ff6b9d 100%);
+  transform: scale(1.1);
+  color: white;
+}
+
+.btn-outline-valentine {
+  border: 3px solid #e91e63;
+  color: #e91e63;
+  background: white;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-valentine:hover {
+  background: #e91e63;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Animated Heart */
+.heart-container {
+  margin: 40px 0;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background: #e91e63;
+  position: relative;
+  margin: 0 auto;
+  transform: rotate(-45deg);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: #e91e63;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart:before {
+  top: -50px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: 50px;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  25% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1);
+  }
+  75% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+/* Update navbar to match theme */
+.navbar {
+  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%) !important;
+}
+
+.navbar-brand,
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #ffe4e1 !important;
+}
+
+footer {
+  background: #ff69b4;
+  color: white;
+}
+
+footer a {
+  color: #ffe4e1;
+}
+
+footer a:hover {
+  color: white;
+}
