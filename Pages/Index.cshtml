@@ -1,0 +1,52 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Be My Valentine";
+}
+
+<div class="text-center valentine-container">
+    <h1 class="display-3 valentine-title">💕 Be My Valentine 💕</h1>
+    <div class="heart-container">
+        <div class="heart"></div>
+    </div>
+    <p class="lead valentine-message">Will you be my Valentine?</p>
+    <div class="button-group mt-4">
+        <button class="btn btn-valentine btn-lg mx-2" onclick="sayYes()">Yes! 💖</button>
+        <button class="btn btn-outline-valentine btn-lg mx-2" onclick="sayMaybe()">Maybe... 💭</button>
+    </div>
+    <div id="response-message" class="mt-4"></div>
+</div>
+
+@section Scripts {
+    <script>
+        function sayYes() {
+            document.getElementById('response-message').innerHTML = 
+                '<h3 class="text-danger">🎉 Yay! Happy Valentine\'s Day! 🎉</h3>';
+            createFloatingHearts();
+        }
+
+        function sayMaybe() {
+            document.getElementById('response-message').innerHTML = 
+                '<h4 class="text-info">💭 I\'ll wait for you... 💭</h4>';
+        }
+
+        function createFloatingHearts() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.top = '100%';
+                    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    heart.style.animation = 'float-up 3s ease-in';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.zIndex = '1000';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 100);
+            }
+        }
+    </script>
+}
